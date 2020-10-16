@@ -82,6 +82,7 @@ function registerPartials (src) {
 function registerHelpers (src) {
   handlebars.registerHelper('resolvePage', resolvePage)
   handlebars.registerHelper('resolvePageURL', resolvePageURL)
+  handlebars.registerHelper('isApiComponent', isApiComponent)
   return vfs.src('helpers/*.js', { base: src, cwd: src }).pipe(
     map((file, enc, next) => {
       handlebars.registerHelper(file.stem, requireFromString(file.contents.toString()))
@@ -120,6 +121,11 @@ function resolvePage (spec, context = {}) {
 
 function resolvePageURL (spec, context = {}) {
   if (spec) return '/' + (spec = spec.split(':').pop()).slice(0, spec.lastIndexOf('.')) + '.html'
+}
+
+function isApiComponent (value) {
+  console.log('Component: ' + value)
+  return value !== 'Bonita REST API'
 }
 
 function transformHandlebarsError ({ message, stack }, layout) {

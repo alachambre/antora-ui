@@ -22,8 +22,8 @@ body {
   text-decoration: none;
 }
 
-.navbar-brand .navbar-item:first-child,
-.navbar-brand .navbar-item:first-child a {
+.navbar-brand .navbar-item:nth-child(2n),
+.navbar-brand .navbar-item:nth-child(2n) a {
   color: var(--navbar-font-color);
   font-size: calc(22 / var(--rem-base) * 1rem);
 }
@@ -276,4 +276,13 @@ body {
   color: var(--navbar-button-font-color);
   padding: 0 0.75em;
   white-space: nowrap;
+}
+
+.bonita-logo {
+  background: url(../img/bonita-logo.svg) no-repeat 50% 45%;
+  background-size: 50%;
+  display: block;
+  height: 3.5rem;
+  padding: 0;
+  width: 4.5rem;
 }
