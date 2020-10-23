@@ -1,8 +1,16 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="bonita-logo" href="{{{or site.url (or siteRootUrl siteRootPath)}}}"></a>
-      <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
+      <div class="navbar-item">
+        <a class="bonita-logo" href="{{{or site.url (or siteRootUrl siteRootPath)}}}"></a>
+        <a href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
+      </div>
+
+      <div class="navbar-item hide-for-print">
+        {{!-- Algolia search bar --}}
+        <input type="text" placeholder="Search Docs" class="query ds-input" id="search-query">
+      </div>
+
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
